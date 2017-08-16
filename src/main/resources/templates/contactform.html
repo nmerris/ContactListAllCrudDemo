@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add a contact</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/process}"
+      th:object="${contact}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+    First Name :<input type="text" th:field="*{nameFirst}" />
+    <span th:if="${#fields.hasErrors('nameFirst')}"
+          th:errors="*{nameFirst}"></span><br />
+    Last Name :<input type="text" th:field="*{nameLast}" />
+    <span th:if="${#fields.hasErrors('nameLast')}"
+          th:errors="*{nameLast}"></span><br />
+    Email :<textarea rows="3" th:field="*{email}" />
+    <span th:if="${#fields.hasErrors('email')}"
+          th:errors="*{email}"></span><br />
+    Phone Number :<input type="text" th:field="*{phoneNum}" />
+    <span th:if="${#fields.hasErrors('phoneNum')}"
+          th:errors="*{phoneNum}"></span><br />
+    <br />
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
