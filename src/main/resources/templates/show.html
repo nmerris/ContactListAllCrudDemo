@@ -2,15 +2,15 @@
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Show course</title>
+    <title>Show contact</title>
 </head>
 <body>
 
-<a href="/">Show All Courses</a><br />
-Title :<span th:text="${course.title}" ></span><br />
-Instructor :<span th:text="${course.instructor}" ></span><br />
-Description :<p th:text="${course.description}" ></p>
-Credits :<span th:text="${course.credit}" ></span><br />
-<a th:href="@{/delete/{id}(id=${course.id})}">Delete this course</a>
+<a href="/">Show All Contacts</a><br />
+First Name :<span th:text="${contact.nameFirst}" ></span><br />
+Last Name :<span th:text="${contact.nameLast}" ></span><br />
+Email :<p th:text="${contact.email}" ></p>
+Phone Number :<span th:text="${contact.phoneNum}" ></span><br />
+<a th:href="@{/delete/{id}(id=${contact.id})}">Delete this contact</a>
 </body>
 </html>

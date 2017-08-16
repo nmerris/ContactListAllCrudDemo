@@ -2,25 +2,27 @@
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Course list</title>
+    <title>Contact list</title>
 </head>
 <body>
-<a href="/add">Add a Course</a><br />
+<a href="/add">Add a Contact</a><br />
 <table>
     <tr>
-        <th>Title</th>
-        <th>Instructor</th>
-        <th>Credits</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
         <td>Actions</td>
     </tr>
-    <tr th:each="course : ${courses}">
-        <td th:text="${course.title}"></td>
-        <td th:text="${course.instructor}"></td>
-        <td th:text="${course.credit}"></td>
+    <tr th:each="contact : ${contacts}">
+        <td th:text="${contact.nameFirst}"></td>
+        <td th:text="${contact.nameLast}"></td>
+        <td th:text="${contact.email}"></td>
+        <td th:text="${contact.phoneNum}"></td>
         <td>
-            <a th:href="@{/update/{id}(id=${course.id})}">Update</a> -
-            <a th:href="@{/detail/{id}(id=${course.id})}">Details</a> -
-            <a th:href="@{/delete/{id}(id=${course.id})}">Delete</a>
+            <a th:href="@{/update/{id}(id=${contact.id})}">Update</a> -
+            <a th:href="@{/detail/{id}(id=${contact.id})}">Details</a> -
+            <a th:href="@{/delete/{id}(id=${contact.id})}">Delete</a>
         </td>
     </tr>
 </table>

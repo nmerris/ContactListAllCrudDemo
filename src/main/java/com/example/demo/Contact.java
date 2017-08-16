@@ -25,6 +25,7 @@ public class Contact {
     @Email
     private String email;
 
+    // maybe better to be more restrictive here....
     @Pattern(regexp="^(\\+0?1\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$")
     private String phoneNum;
 
